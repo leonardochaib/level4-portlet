@@ -2,7 +2,7 @@
 <project name="maven-antrun-" default="main"  >
 <target name="main">
   <property name="src.dir" value="/Volumes/Dados/Users/developer/Workspace/smiles/level4-portlet/src/main/webapp"/>
-  <property name="buildtime" value="15-09-2020 01:54"/>
+  <property name="buildtime" value="15-09-2020 03:44"/>
   <echo file="${src.dir}/version">{&quot;version&quot;=&quot;1.0.0-SNAPSHOT&quot;, &quot;date&quot;=&quot;${buildtime}&quot;}</echo>
 </target>
 </project>

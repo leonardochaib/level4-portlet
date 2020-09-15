@@ -3,6 +3,6 @@
 
 <display>
 	<category name="Level4">
-		<portlet id="level4-treinamento-portlet"></portlet>
+		<portlet id="smiles-treinamento-portlet"></portlet>
 	</category>
 </display>

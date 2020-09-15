@@ -4,7 +4,7 @@
 <liferay-portlet-app>
 
 	<portlet>
-		<portlet-name>level4-treinamento-portlet</portlet-name>
+		<portlet-name>smiles-treinamento-portlet</portlet-name>
 		<icon>/icon.png</icon>
 		<private-session-attributes>false</private-session-attributes>
 		<render-weight>0</render-weight>
