@@ -20,7 +20,7 @@ public class TreinamentoVO {
     }
 
     public void setLogged(boolean logged) {
-        logged = logged;
+        this.logged = logged;
     }
 
     public MemberVO getMember() {
