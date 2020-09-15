@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <configuration>
+    <property resource="application.properties"/>
+    <contextName>${application_name}</contextName>
+    <jmxConfigurator/>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/${application_name}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>log/${application_name}.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>50MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%date{YYYY-MM-dd HH:mm:ss} %level [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="WS_TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/${application_name}_trace.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>log/${application_name}_trace.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>50MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%date{YYYY-MM-dd HH:mm:ss} %level [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="br.com.smiles.ws.client.handlers" level="ERROR">
+        <appender-ref ref="WS_TRACE"/>
+    </logger>
+
+    <logger name="br.com.smiles.account" level="ERROR">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+   <logger name="br.com.smiles.helper" level="ERROR">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="FILE"/>
+  </root>
+</configuration> 
